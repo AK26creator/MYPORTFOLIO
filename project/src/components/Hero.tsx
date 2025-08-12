@@ -1,7 +1,7 @@
 import React from "react";
 import { ArrowDown, ExternalLink, Eye, Mail } from "lucide-react";
 import profileImg from "../assets/profile.jpg"; // Make sure the path is correct
-import DarkVeil from "./DarkVeil";
+import LiquidChrome from "./LiquidChrome";
 
 const Hero: React.FC = () => {
   const scrollToProjects = () => {
@@ -19,7 +19,12 @@ const Hero: React.FC = () => {
     >
       {/* Animated Background */}
       <div className="absolute inset-0 -z-10">
-        <DarkVeil speed={0.6} resolutionScale={1} />
+        <LiquidChrome
+          baseColor={[0.1, 0.1, 0.1]}
+          speed={1}
+          amplitude={0.6}
+          interactive={true}
+        />
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
@@ -69,11 +74,11 @@ const Hero: React.FC = () => {
 
           {/* Image Section - Full Card */}
           <div className="flex-1 flex justify-center lg:justify-end">
-            <div className="w-80 h-96 sm:w-96 sm:h-[28rem] rounded-2xl shadow-2xl overflow-hidden">
+            <div className="w-80 h-80 sm:w-96 sm:h-96 rounded-full shadow-2xl overflow-hidden">
               <img
                 src={profileImg}
                 alt="Profile"
-                className="w-full h-full object-cover rounded-2xl"
+                className="w-full h-full object-cover rounded-full"
               />
             </div>
           </div>
