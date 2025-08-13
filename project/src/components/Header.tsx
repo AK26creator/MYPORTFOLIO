@@ -44,7 +44,7 @@ const Header: React.FC = () => {
             className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white cursor-pointer"
             onClick={() => scrollToSection('hero')}
           >
-            Akash Kumar Singh O
+            Akash Kumar Singh 
           </div>
 
           {/* Desktop Navigation */}
