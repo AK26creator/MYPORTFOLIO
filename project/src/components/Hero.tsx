@@ -1,7 +1,7 @@
 import React from "react";
 import { ArrowDown, ExternalLink, Eye, Mail } from "lucide-react";
 import profileImg from "../assets/profile.jpg"; // Make sure the path is correct
-import LiquidChrome from "./LiquidChrome";
+import DarkVeil from "./DarkVeil";
 
 const Hero: React.FC = () => {
   const scrollToProjects = () => {
@@ -19,12 +19,7 @@ const Hero: React.FC = () => {
     >
       {/* Animated Background */}
       <div className="absolute inset-0 -z-10">
-        <LiquidChrome
-          baseColor={[0.1, 0.1, 0.1]}
-          speed={1}
-          amplitude={0.6}
-          interactive={true}
-        />
+        <DarkVeil />
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
