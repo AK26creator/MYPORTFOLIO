@@ -52,7 +52,7 @@ const Hero: React.FC = () => {
                 Contact Me
               </button>
               <button
-                onClick={() => window.open("#", "_blank")}
+                onClick={() => window.open("https://drive.google.com/file/d/11Uxta9UIGip5E_LE6K5OMVlkKhiga4qJ/view?usp=sharing", "_blank")}
                 className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white px-8 py-3 rounded-full font-semibold flex items-center gap-2"
               >
                 <ExternalLink className="w-5 h-5" />
