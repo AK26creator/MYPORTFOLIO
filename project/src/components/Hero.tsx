@@ -1,7 +1,6 @@
 import React from "react";
 import { ArrowDown, ExternalLink, Eye, Mail } from "lucide-react";
 import profileImg from "../assets/profile.jpg"; // Make sure the path is correct
-import DarkVeil from "./DarkVeil";
 
 const Hero: React.FC = () => {
   const scrollToProjects = () => {
@@ -15,13 +14,8 @@ const Hero: React.FC = () => {
   return (
     <section
       id="hero"
-      className="min-h-screen flex items-center justify-center relative overflow-hidden"
+      className="min-h-screen flex items-center justify-center relative overflow-hidden bg-white dark:bg-gray-900"
     >
-      {/* Animated Background */}
-      <div className="absolute inset-0 -z-10">
-        <DarkVeil />
-      </div>
-
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-20">
           {/* Text Section */}
