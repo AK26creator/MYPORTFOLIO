@@ -29,7 +29,7 @@ const Projects: React.FC = () => {
       image: 'https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=600',
       liveUrl: '#',
       githubUrl: '#',
-      featured: false
+      featured: true
     },
     {
       title: 'Portfolio Website',
@@ -38,7 +38,7 @@ const Projects: React.FC = () => {
       image: 'https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=600',
       liveUrl: '#',
       githubUrl: '#',
-      featured: false
+      featured: true
     },
     {
       title: 'Real-time Chat Application',
@@ -47,7 +47,7 @@ const Projects: React.FC = () => {
       image: 'https://images.pexels.com/photos/267350/pexels-photo-267350.jpeg?auto=compress&cs=tinysrgb&w=600',
       liveUrl: '#',
       githubUrl: '#',
-      featured: false
+      featured: true
     },
     {
       title: 'Weather Prediction System',
@@ -56,7 +56,7 @@ const Projects: React.FC = () => {
       image: 'https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg?auto=compress&cs=tinysrgb&w=600',
       liveUrl: '#',
       githubUrl: '#',
-      featured: false
+      featured: true
     }
   ];
 
@@ -76,7 +76,7 @@ const Projects: React.FC = () => {
       </div>
       
       {/* Dark overlay */}
-      <div className="absolute inset-0 bg-black/20 z-1"></div>
+      <div className="absolute inset-0 bg-black/10 z-1"></div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
@@ -93,24 +93,15 @@ const Projects: React.FC = () => {
           {featuredProjects.map((project, index) => (
             <div
               key={project.title}
-              className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden"
+              className="bg-white/5 backdrop-blur-sm border border-white/20 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden"
               style={{ animationDelay: `${index * 200}ms` }}
             >
-              <div className="relative overflow-hidden">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-48 object-cover transition-transform duration-300 hover:scale-110"
-                  loading="lazy"
-                />
-                <div className="absolute top-4 right-4">
+              <div className="p-8 text-center">
+                <div className="mb-4">
                   <span className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-3 py-1 rounded-full text-sm font-medium">
                     Featured
                   </span>
                 </div>
-              </div>
-              
-              <div className="p-6">
                 <h3 className="text-xl font-bold text-white mb-3">
                   {project.title}
                 </h3>
@@ -159,19 +150,10 @@ const Projects: React.FC = () => {
             {otherProjects.map((project, index) => (
               <div
                 key={project.title}
-                className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden"
+                className="bg-white/5 backdrop-blur-sm border border-white/20 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden"
                 style={{ animationDelay: `${(index + featuredProjects.length) * 150}ms` }}
               >
-                <div className="relative overflow-hidden">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-32 object-cover transition-transform duration-300 hover:scale-110"
-                    loading="lazy"
-                  />
-                </div>
-                
-                <div className="p-4">
+                <div className="p-6 text-center">
                   <h4 className="text-lg font-bold text-white mb-2">
                     {project.title}
                   </h4>
