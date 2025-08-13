@@ -10,7 +10,7 @@ const Footer: React.FC = () => {
     {
       name: 'LinkedIn',
       icon: Linkedin,
-      href: 'https://www.linkedin.com/in/madhan-kumar-p-759402324',
+      href: 'https://www.linkedin.com/in/akash-kumar-singh-o-7746242b5',
       color: 'hover:text-blue-600'
     },
     {
