@@ -25,9 +25,9 @@ const Hero: React.FC = () => {
               <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                 AI Engineer
               </span>{" "}
-              &{" "}
+              {" "}
               <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-                Full Stack Developer
+              
               </span>
             </h1>
             <p className="text-xl sm:text-2xl text-gray-600 dark:text-gray-300 mb-8">
