@@ -1,116 +1,85 @@
-import React from 'react';
-import { ExternalLink, Github, Gamepad2, Bot, Globe, MessageSquare } from 'lucide-react';
+import React from "react";
+import { ArrowDown, ExternalLink, Eye, Mail } from "lucide-react";
+import profileImg from "../assets/profile.jpg"; // Make sure the path is correct
 
-const Projects: React.FC = () => {
-  const projects = [
-    {
-      title: 'Gamified Learning App (EVE)',
-      description: 'AI-based gamified learning platform with interactive UI and progress tracking, featuring 3D elements and personalized learning paths.',
-      image: 'https://images.pexels.com/photos/5905857/pexels-photo-5905857.jpeg?auto=compress&cs=tinysrgb&w=600',
-      tech: ['React', 'AI/ML', 'Firebase', '3D UI', 'Stripe'],
-      icon: Gamepad2,
-      color: 'from-purple-500 to-pink-500'
-    },
-    {
-      title: 'AI-Powered Chatbot',
-      description: 'Voice chatbot with file upload and summarization capabilities, featuring natural language processing and document analysis.',
-      image: 'https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=600',
-      tech: ['Python', 'NLP', 'TensorFlow', 'Voice API'],
-      icon: Bot,
-      color: 'from-blue-500 to-cyan-500'
-    },
-    {
-      title: 'Portfolio Website',
-      description: 'Responsive personal portfolio with project showcase, featuring modern design, animations, and dark mode support.',
-      image: 'https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=600',
-      tech: ['React', 'Tailwind CSS', 'TypeScript', 'Animations'],
-      icon: Globe,
-      color: 'from-green-500 to-teal-500'
-    },
-    {
-      title: 'AI Customer Support Bot',
-      description: 'Smart chatbot for customer queries with automated responses, ticket routing, and sentiment analysis capabilities.',
-      image: 'https://images.pexels.com/photos/5076516/pexels-photo-5076516.jpeg?auto=compress&cs=tinysrgb&w=600',
-      tech: ['Python', 'NLP', 'Customer Service', 'Analytics'],
-      icon: MessageSquare,
-      color: 'from-orange-500 to-red-500'
-    }
-  ];
+const Hero: React.FC = () => {
+  const scrollToProjects = () => {
+    document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const scrollToContact = () => {
+    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
-    <section id="projects" className="py-20 bg-gray-50 dark:bg-gray-800">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4">
-            Featured Projects
-          </h2>
-          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            Innovative solutions that showcase my expertise in AI and full-stack development
-          </p>
+    <section
+      id="hero"
+      className="min-h-screen flex items-center justify-center relative overflow-hidden bg-white dark:bg-gray-900"
+    >
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-20">
+          {/* Text Section */}
+          <div className="flex-1 text-center lg:text-left">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-4">
+              Motivated{" "}
+              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                AI Engineer
+              </span>{" "}
+              {" "}
+              <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+              
+              </span>
+            </h1>
+            <p className="text-xl sm:text-2xl text-gray-600 dark:text-gray-300 mb-8">
+              Building AI-powered solutions, web apps, and innovative digital
+              experiences.
+            </p>
+
+            {/* Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4">
+              <button
+                onClick={scrollToProjects}
+                className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full font-semibold flex items-center gap-2"
+              >
+                <Eye className="w-5 h-5" />
+                View Projects
+              </button>
+              <button
+                onClick={scrollToContact}
+                className="border-2 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white hover:bg-gray-900 hover:text-white px-8 py-3 rounded-full font-semibold flex items-center gap-2"
+              >
+                <Mail className="w-5 h-5" />
+                Contact Me
+              </button>
+              <button
+                onClick={() => window.open("https://drive.google.com/file/d/11Uxta9UIGip5E_LE6K5OMVlkKhiga4qJ/view?usp=sharing", "_blank")}
+                className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white px-8 py-3 rounded-full font-semibold flex items-center gap-2"
+              >
+                <ExternalLink className="w-5 h-5" />
+                View Resume
+              </button>
+            </div>
+          </div>
+
+          {/* Image Section - Full Card */}
+          <div className="flex-1 flex justify-center lg:justify-end">
+            <div className="w-80 h-80 sm:w-96 sm:h-96 rounded-full shadow-2xl overflow-hidden border-4 border-black dark:border-white">
+              <img
+                src={profileImg}
+                alt="Profile"
+                className="w-full h-full object-cover rounded-full"
+              />
+            </div>
+          </div>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
-          {projects.map((project, index) => (
-            <div
-              key={project.title}
-              className="group bg-white dark:bg-gray-900 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 overflow-hidden"
-              style={{ animationDelay: `${index * 200}ms` }}
-            >
-              {/* Project Image */}
-              <div className="relative overflow-hidden">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-48 sm:h-64 object-cover transition-transform duration-500 group-hover:scale-110"
-                  loading="lazy"
-                />
-                <div className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-20 group-hover:opacity-30 transition-opacity duration-300`}></div>
-                <div className="absolute top-4 left-4">
-                  <div className={`p-3 rounded-full bg-gradient-to-br ${project.color} shadow-lg`}>
-                    <project.icon className="w-6 h-6 text-white" />
-                  </div>
-                </div>
-              </div>
-
-              {/* Project Content */}
-              <div className="p-6 sm:p-8">
-                <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-3">
-                  {project.title}
-                </h3>
-                <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
-                  {project.description}
-                </p>
-
-                {/* Tech Stack */}
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {project.tech.map((tech) => (
-                    <span
-                      key={tech}
-                      className="px-3 py-1 text-sm bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full border border-gray-200 dark:border-gray-600"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-
-                {/* Project Links */}
-                <div className="flex gap-4">
-                  <button className="flex items-center gap-2 px-4 py-2 bg-gray-900 dark:bg-white text-white dark:text-gray-900 rounded-lg hover:bg-gray-800 dark:hover:bg-gray-100 transition-colors duration-200 font-medium">
-                    <Github className="w-4 h-4" />
-                    Code
-                  </button>
-                  <button className={`flex items-center gap-2 px-4 py-2 bg-gradient-to-r ${project.color} text-white rounded-lg hover:shadow-lg transition-all duration-200 font-medium`}>
-                    <ExternalLink className="w-4 h-4" />
-                    Demo
-                  </button>
-                </div>
-              </div>
-            </div>
-          ))}
+        {/* Scroll Indicator */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+          <ArrowDown className="w-6 h-6 text-gray-400 dark:text-gray-500" />
         </div>
       </div>
     </section>
   );
 };
 
-export default Projects;
+export default Hero;
