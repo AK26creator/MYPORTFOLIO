@@ -16,7 +16,7 @@ const Footer: React.FC = () => {
     {
       name: 'GitHub',
       icon: Github,
-      href: '#',
+      href: 'https://github.com/AK26creator',
       color: 'hover:text-gray-600'
     },
     {
