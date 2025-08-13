@@ -63,7 +63,7 @@ const Hero: React.FC = () => {
 
           {/* Image Section - Full Card */}
           <div className="flex-1 flex justify-center lg:justify-end">
-            <div className="w-80 h-80 sm:w-96 sm:h-96 rounded-full shadow-2xl overflow-hidden">
+            <div className="w-80 h-80 sm:w-96 sm:h-96 rounded-full shadow-2xl overflow-hidden border-4 border-black dark:border-white">
               <img
                 src={profileImg}
                 alt="Profile"
